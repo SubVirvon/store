@@ -1,0 +1,8 @@
+C:\Users\Danii\source\repos\store\store\bin\Debug\store.exe.config
+C:\Users\Danii\source\repos\store\store\bin\Debug\store.exe
+C:\Users\Danii\source\repos\store\store\bin\Debug\store.pdb
+C:\Users\Danii\source\repos\store\store\obj\Debug\store.csproj.AssemblyReference.cache
+C:\Users\Danii\source\repos\store\store\obj\Debug\store.csproj.SuggestedBindingRedirects.cache
+C:\Users\Danii\source\repos\store\store\obj\Debug\store.csproj.CoreCompileInputs.cache
+C:\Users\Danii\source\repos\store\store\obj\Debug\store.exe
+C:\Users\Danii\source\repos\store\store\obj\Debug\store.pdb
