@@ -20,6 +20,7 @@ namespace store
             }
 
             int clientsCounter = 0;
+
             Console.Clear();
 
             while(clients.Count > 0)
@@ -48,6 +49,7 @@ namespace store
             while (isCorrect == false)
             {
                 Console.Write(expectedAction);
+
                 input = Console.ReadLine();
 
                 if (int.TryParse(input, out result))
