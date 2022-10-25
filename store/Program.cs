@@ -10,32 +10,57 @@ namespace store
     {
         static void Main(string[] args)
         {
-            Console.Write("введите количество человек в очереди: ");
-
-            int clientsCount = Convert.ToInt32(Console.ReadLine());
+            int clientsCount = CheckingInput("введите количество человек в очереди: "); 
             Queue<int> clients = new Queue<int>(clientsCount);
-            int check = 0;
+            int totalCost = 0;
 
             for(int i = 0; i < clientsCount; i++)
             {
-                Console.Write($"Введите сумму покупики {i + 1} клиента: ");
-                clients.Enqueue(Convert.ToInt32(Console.ReadLine()));
+                clients.Enqueue(CheckingInput($"Введите сумму покупики {i + 1} клиента: "));
             }
 
+            int clientsCounter = 0;
             Console.Clear();
 
             while(clients.Count > 0)
             {
-                Console.WriteLine($"После оплаты на счет поступило {clients.Peek()} денег");
+                clientsCounter++;
 
-                check += clients.Dequeue();
+                Console.WriteLine($"После оплаты {clientsCounter} клиента, на счет поступило {clients.Peek()} денег");
 
-                Console.WriteLine($"Ваш счет: {check}");
+                totalCost += clients.Dequeue();
+
+                Console.WriteLine($"Ваш счет: {totalCost}");
                 Console.ReadKey();
                 Console.Clear();
             }
 
             Console.ReadLine();
+        }
+
+        static int CheckingInput(string expectedAction)
+        {
+            string input;
+            bool isCorrect = false;
+            int result = 0;
+            string errorMessage = "Некоректный ввод";
+
+            while (isCorrect == false)
+            {
+                Console.Write(expectedAction);
+                input = Console.ReadLine();
+
+                if (int.TryParse(input, out result))
+                {
+                    isCorrect = true;
+                }
+                else
+                {
+                    Console.WriteLine(errorMessage);
+                }
+            }
+
+            return result;
         }
     }
 }
