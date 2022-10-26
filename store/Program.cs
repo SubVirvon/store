@@ -10,13 +10,13 @@ namespace store
     {
         static void Main(string[] args)
         {
-            int clientsCount = CheckingInput("введите количество человек в очереди: "); 
+            int clientsCount = CheckInput("введите количество человек в очереди: "); 
             Queue<int> clients = new Queue<int>(clientsCount);
             int totalCost = 0;
 
             for(int i = 0; i < clientsCount; i++)
             {
-                clients.Enqueue(CheckingInput($"Введите сумму покупики {i + 1} клиента: "));
+                clients.Enqueue(CheckInput($"Введите сумму покупики {i + 1} клиента: "));
             }
 
             int clientsCounter = 0;
@@ -39,7 +39,7 @@ namespace store
             Console.ReadLine();
         }
 
-        static int CheckingInput(string expectedAction)
+        static int CheckInput(string expectedAction)
         {
             string input;
             bool isCorrect = false;
